@@ -18,7 +18,7 @@ pipeline{
     } 
     stage('apply'){
       steps{
-        sh 'terraform apply --auto -approve -no-color'
+        sh 'terraform apply --auto-approve -no-color'
       }
     }
   }
