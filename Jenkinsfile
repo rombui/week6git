@@ -1,6 +1,12 @@
 pipeline{
   agent any
   stages{
+    stages {
+        stage('Check Terraform Version') {
+            steps {
+                sh 'terraform --version'
+            }
+        }
     stage('init'){
       steps{
         sh 'terraform init -upgrade -no-color'
