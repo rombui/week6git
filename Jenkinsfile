@@ -8,7 +8,17 @@ pipeline{
     }
     stage('validate'){
       steps{
-        sh 'terraform validate'
+        sh 'terraform validate -no-color'
+      }
+    }
+   stage('plan'){
+      steps{
+        sh 'terraform plan -no-color'
+      }
+    } 
+    stage('apply'){
+      steps{
+        sh 'terraform apply --auto -approve -no-color'
       }
     }
   }
